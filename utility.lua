@@ -15,6 +15,7 @@ local function createZone(name, type, data)
         zone = ComboZone:Create(data.zones, data)
     else
         print('^1[polyZone] ^0Invalid zone type ' .. type .. ' for zone ' .. name)
+        return
     end
     zone:onPointInOut(PolyZone.getPlayerPosition, function(isPointInside, point)
         if isPointInside then
