@@ -30,6 +30,13 @@ end
 AddEventHandler('polyZone:createZone', createZone)
 exports('createZone', createZone)
 
+local function removeZone(name)
+    zones[name]:destroy()
+end
+
+AddEventHandler('polyZone:removeZone', removeZone)
+exports('removeZone', removeZone)
+
 exports('getZoneObject', function(name)
     return zones[name]
 end)
